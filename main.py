@@ -1,12 +1,7 @@
 import random
-import requests
 from flask import Flask
 
-def capyson():    
-    url = 'https://api.capy.lol/v1/capybara?json=true'
-    res = requests.get(url)
-    data = res.json()
-    return data['url']
+
 
 
 app = Flask(__name__)
@@ -23,7 +18,6 @@ def randoms():
 
 @app.route("/capy")
 def bara():
-    image_url = capyson()
-    return f'<img src="image_url">'
+    return f'<img src="https://api.capy.lol/v1/capybara/">'
 
 app.run(debug=True)
